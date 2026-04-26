@@ -1,0 +1,51 @@
+# Top 100 Instagram Brasil
+
+## Descrição
+Este site apresenta o ranking dos 100 perfis do Instagram com mais seguidores no Brasil.
+Os dados são atualizados regularmente e classificados por categoria.
+
+## Dados disponíveis por perfil
+- Posição no ranking (1 a 100)
+- Nome completo
+- Username do Instagram
+- Número de seguidores
+- Número de seguindo
+- Número de publicações
+- Categoria (Atleta, Músico, Ator/Atriz, Influencer, Humorista, Modelo, etc.)
+- Conta verificada (sim/não)
+- Variação de posição (subiu, caiu, estável)
+- Data da última atualização
+
+## Categorias
+- atleta: Esportistas brasileiros
+- musico: Cantores, compositores e músicos
+- ator: Atores e atrizes
+- influencer: Influenciadores digitais e YouTubers
+- humorista: Comediantes e criadores de conteúdo humorístico
+- modelo: Modelos
+- politico: Políticos brasileiros
+- outros: Outras personalidades
+
+## Estrutura de URLs
+- /                         → Ranking completo (top 100)
+- /perfil/{username}        → Página individual de cada perfil
+- /categoria/{slug}         → Ranking por categoria
+- /sobre                    → Metodologia e FAQ
+- /sitemap.xml              → Sitemap XML
+
+## Principais perfis brasileiros (top 10)
+1. neymarjr — Neymar Jr (Atleta) — 220M+ seguidores
+2. anitta — Anitta (Música) — 65M+ seguidores
+3. matheuscarrieri — Matheus Carrieri (Humorista) — 55M+ seguidores
+4. whindersson — Whindersson Nunes (Humorista) — 53M+ seguidores
+5. ronaldo — Ronaldo Fenômeno (Atleta) — 52M+ seguidores
+6. ogilbertogil — Gilberto Gil (Música) — 51M+ seguidores
+7. virginiafonseca — Virginia Fonseca (Influencer) — 51M+ seguidores
+8. ivete — Ivete Sangalo (Música) — 47M+ seguidores
+
+## Fonte dos dados
+Os dados são coletados e verificados manualmente pela equipe editorial.
+Não temos afiliação oficial com a Meta/Instagram.
+
+## Contato
+Site: https://top100instagram.com.br
