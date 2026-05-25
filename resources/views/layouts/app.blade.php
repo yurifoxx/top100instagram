@@ -65,6 +65,11 @@
                 <a href="{{ route('category.show', 'musico') }}" class="hover:text-purple-600 transition-colors">Músicos</a>
                 <a href="{{ route('category.show', 'influencer') }}" class="hover:text-purple-600 transition-colors">Influencers</a>
                 <a href="{{ route('about') }}" class="hover:text-purple-600 transition-colors">Sobre</a>
+                <form action="{{ route('search') }}" method="GET" class="flex items-center">
+                    <input type="text" name="q" value="{{ request('q') }}"
+                           placeholder="Buscar perfil..."
+                           class="w-36 px-3 py-1.5 text-sm border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all focus:w-48">
+                </form>
             </nav>
             {{-- Mobile menu --}}
             <button x-data x-on:click="$dispatch('toggle-menu')" class="md:hidden text-gray-600">
@@ -80,6 +85,11 @@
             <a href="{{ route('category.show', 'musico') }}" class="block py-1 text-gray-700 hover:text-purple-600">Músicos</a>
             <a href="{{ route('category.show', 'influencer') }}" class="block py-1 text-gray-700 hover:text-purple-600">Influencers</a>
             <a href="{{ route('about') }}" class="block py-1 text-gray-700 hover:text-purple-600">Sobre</a>
+            <form action="{{ route('search') }}" method="GET" class="pt-1">
+                <input type="text" name="q" value="{{ request('q') }}"
+                       placeholder="Buscar perfil..."
+                       class="w-full px-3 py-1.5 text-sm border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-400">
+            </form>
         </div>
     </header>
 
