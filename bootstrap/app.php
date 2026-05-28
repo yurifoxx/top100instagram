@@ -15,7 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withSchedule(function (Schedule $schedule) {
-        $schedule->command('ranking:snapshot')->weekly();
+        $schedule->command('ranking:snapshot')->dailyAt('00:00');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
