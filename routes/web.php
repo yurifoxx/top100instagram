@@ -9,6 +9,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SitemapController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/api/ranking', [HomeController::class, 'apiRanking'])->name('api.ranking');
 Route::get('/buscar', [SearchController::class, 'index'])->name('search');
 Route::get('/perfil/{username}', [ProfileController::class, 'show'])->name('profile.show');
 Route::get('/categoria/{slug}', [CategoryController::class, 'show'])->name('category.show');

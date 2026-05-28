@@ -7,6 +7,47 @@ use App\Models\InstagramProfile;
 
 class HomeController extends Controller
 {
+    public function apiRanking(\Illuminate\Http\Request $request)
+    {
+        $category = $request->query('category');
+        $limit = $request->query('limit', 100);
+
+        $cacheKey = 'api_ranking_' . md5($request->fullUrl());
+
+        $data = \Illuminate\Support\Facades\Cache::remember($cacheKey, 3600, function () use ($category, $limit) {
+            $query = InstagramProfile::ranking()->with('category');
+
+            if ($category) {
+                $query->whereHas('category', function ($q) use ($category) {
+                    $q->where('name', $category);
+                });
+            }
+
+            $profiles = $query->limit($limit)->get();
+
+            return $profiles->map(function ($profile) {
+                return [
+                    'rank'            => $profile->rank,
+                    'username'        => $profile->username,
+                    'full_name'       => $profile->full_name,
+                    'followers_count' => $profile->followers_count,
+                    'rank_change'     => $profile->rank_change,
+                    'category'        => [
+                        'name' => $profile->category ? $profile->category->name : null,
+                    ],
+                    'is_verified'     => $profile->is_verified,
+                    'avatar_url'      => $profile->avatar_url,
+                    'profile_url'     => $profile->profile_url,
+                ];
+            });
+        });
+
+        return response()->json([
+            'data'       => $data,
+            'updated_at' => now(),
+        ]);
+    }
+
     public function index()
     {
         $profiles = InstagramProfile::with('category')
