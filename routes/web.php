@@ -5,9 +5,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SitemapController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/buscar', [SearchController::class, 'index'])->name('search');
 Route::get('/perfil/{username}', [ProfileController::class, 'show'])->name('profile.show');
 Route::get('/categoria/{slug}', [CategoryController::class, 'show'])->name('category.show');
 Route::get('/sobre', [AboutController::class, 'index'])->name('about');
